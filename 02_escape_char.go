@@ -1,6 +1,5 @@
-/*
-转义
- */
+//转义
+
 package main
 
 import "fmt"
