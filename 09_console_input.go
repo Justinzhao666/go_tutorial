@@ -4,8 +4,8 @@ package main
 import "fmt"
 
 func main() {
-	var name string;
-	var age int;
+	var name string
+	var age int
 	fmt.Println("输入name:")
 	fmt.Scanln(&name)
 	fmt.Println("输入age:")
