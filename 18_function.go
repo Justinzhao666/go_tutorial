@@ -13,6 +13,8 @@ func main() {
 	}, 1, 2))
 
 	testRet()
+
+	testParams(1, 1, 1)
 }
 
 // 函数名(形参1 类型，....新参n 类型) 返回值类型
@@ -43,4 +45,14 @@ func testRet() (n1 int, n2 int) {
 	n1 = 1 // 这里是直接复制的，不是申明变量并赋值，申明被返回值给先申明了
 	n2 = 2
 	return
+}
+
+// go中支持可变参数: 可变参数要放在参数的最后
+func testParams(args ...int) int {
+	// args 是一个slice切片
+	sum := 0
+	for i := 0; i < len(args); i++ {
+		sum += args[i]
+	}
+	return sum
 }

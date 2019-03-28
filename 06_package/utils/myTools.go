@@ -11,3 +11,11 @@ func PublicFunction() {
 func privateFunction() {
 	fmt.Println("this is a private function")
 }
+
+func init() {
+	fmt.Println("1 init")
+}
+
+func main() {
+	fmt.Println("1 main")
+}

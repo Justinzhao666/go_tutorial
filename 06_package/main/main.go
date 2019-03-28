@@ -12,5 +12,5 @@ func main() {
 	//fmt.Println(model.private_val) 无法访问私有变量
 
 	util.PublicFunction()
-	util.Main()
+	//util.Main()
 }
