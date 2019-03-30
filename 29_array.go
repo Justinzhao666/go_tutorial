@@ -30,6 +30,31 @@ func main() {
 	swap(&arr2)
 	fmt.Println(arr2)
 
+	// 二维数组
+	var arr2V [4][6]int
+	var arr2VInit [2][3]int = [2][3]int{{1, 1, 1}, {1, 1, 1}} // 初始化和数组是一样的，也有其他的初始化方法
+	fmt.Println(arr2VInit)
+	arr2V[1][2] = 1
+	fmt.Println(arr2V)
+	fmt.Println(arr2V[0])
+	// 二维数组内存布局：二维数组其实存的是数组纵度的指针。如上就是4个长度的指针，这些指针指向的是具体数组内存的地址
+	fmt.Printf("%p \n", &arr2V)
+	fmt.Printf("%p \n", &arr2V[0])
+	fmt.Printf("%p \n", &arr2V[1]) // 输出的这两个地址差距应该是二维数组横度的字节长度 如上6*8 字节 = 16*3，二维数组的内存地址是连续的
+	// 遍历
+	for i := 0; i < len(arr2V); i++ {
+		for j := 0; j < len(arr2V[i]); j++ {
+			fmt.Printf("%v ", arr2V[i][j])
+		}
+		fmt.Println()
+	}
+	for _, v := range arr2V {
+		for _, v := range v {
+			fmt.Printf("%v", v)
+		}
+		fmt.Println()
+	}
+
 }
 
 // 数组的长度是数组类型的一部分： 传参的必须长度也是相同的 [...] 这种长度也必须是相同的。
