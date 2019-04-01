@@ -8,13 +8,13 @@ import (
 
 func main() {
 
-	// map 就是kv结构： key可以支持很多类型，通常为int 或者string ，也可以指针chanel，bool 结构体数组等
+	// map 就是kv结构： key可以支持很多类型，通常为int 或者string ，也可以指针chanel，bool 结构体数组等，map是引用类型的。
 	// slice map function 是不可以作为key的 因为这些不支持==进行比较
 	var map1 map[string]string
 	// map在使用前需要对其分配空间后才能使用，否则报错
 	map1 = make(map[string]string, 1)
 	map1["no1"] = "justin"
-	map1["no2"] = "justin2" // map是可以扩容的
+	map1["no2"] = "justin2" // map是可以自动扩容的
 	map1["no1"] = "zhaohaoren"
 	fmt.Println(map1)
 
@@ -32,7 +32,7 @@ func main() {
 	fmt.Println(map3)
 
 	var map4 = map[string]map[string]string{
-		"a": {
+		"a": { //map-map结构 更加适合使用map-struct
 			"name": "zhao",
 			"sex":  "man",
 		},
