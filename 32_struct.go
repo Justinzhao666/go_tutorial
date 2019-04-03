@@ -55,6 +55,12 @@ func main() {
 	// 其他初始化方式
 	// 1 -推荐
 	var cat2 = Cat{"jack", 11, "red", "yes"}
+	var catn = Cat{
+		Name:  "nacy",
+		Age:   20,
+		Color: "pink",
+		pro:   "no",
+	}
 	// 2
 	var cat3 *Cat = new(Cat)
 	(*cat3).Name = "jack2"
@@ -64,6 +70,7 @@ func main() {
 	fmt.Println(cat2)
 	fmt.Println(*cat3)
 	fmt.Println(*cat4)
+	fmt.Println(catn)
 
 	// 内存：
 	// 结构体所有字段在内存中是连续的，获取值可以通过地址的计算来进行偏移获取。
