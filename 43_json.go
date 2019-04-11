@@ -8,12 +8,14 @@ import (
 
 type Astudent struct {
 	Name string `json:"name"` //序列化指定key	-- 反射机制
-	Age  int `json:"age"`
+	Age  int    `json:"age"`
 }
 
 func main() {
 
 	serialize()
+
+	deSerialize()
 }
 
 func serialize() {
@@ -32,5 +34,12 @@ func serialize() {
 }
 
 func deSerialize() {
-
+	// 使用json.Unmarshal 反序列化
+	var str = "{\"name\":\"justin\",\"age\":24}"
+	var stu Astudent
+	err := json.Unmarshal([]byte(str), &stu)
+	if err != nil {
+		fmt.Println("deSerialize error", err)
+	}
+	fmt.Println(stu)
 }
