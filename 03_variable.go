@@ -32,6 +32,25 @@ func main() {
 	name := "justin"
 	fmt.Println("name=", name)
 
+	// 常量
+	// const修饰，定义时候必须初始化，不可以修改，常量只能修饰bool，数值类型和string类型
+	const constVal int = 10
+	//constVal = 11
+	fmt.Println(constVal)
+	// 其他写法
+	const (
+		aC = 1
+		bC = 2
+	)
+	const (
+		zC       = iota       // 默认为0
+		z2C                   //下面都自增1 = 1, 一种专业写法，其实省略了 = iota
+		z3C                   //为2	省略了iota
+		z4C, z5C = iota, iota // 如果两个在一行，那么两个值都一样
+	)
+	fmt.Println(aC, bC)
+	fmt.Println(zC, z2C, z3C, z4C, z5C)
+
 	// ----------------------------------
 
 	// go一次申明定义多个变量
